@@ -32,7 +32,7 @@ function CreateResourceGroup() {
 	$parameters['objectId'] = $KeyVaultServicePrincipalObjectId
 	
 	 Write-Host ($parameters | Out-String)
-	Deploy-AzureResourceGroup.ps1 -resourcegrouplocation $ResourceGroupLocation -resourcegroupname $ResourceGroupName -uploadartifacts -storageaccountname $ArtifactsStorageAccountName -storagecontainername $ArtifactsStorageContainerName -artifactstagingdirectory $ArtifactsStagingDirectory -templatefile $TemplateFile -templateparameters $parameters
+	.\Deploy-AzureResourceGroup.ps1 -resourcegrouplocation $ResourceGroupLocation -resourcegroupname $ResourceGroupName -uploadartifacts -storageaccountname $ArtifactsStorageAccountName -storagecontainername $ArtifactsStorageContainerName -artifactstagingdirectory $ArtifactsStagingDirectory -templatefile $TemplateFile -templateparameters $parameters
 }
 
 function Main() {
