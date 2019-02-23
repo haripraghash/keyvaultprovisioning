@@ -32,7 +32,7 @@ Write-Host $rawParams['serviceprincipalpassword']
 $scriptParameters = (Get-Command $ScriptPath).Parameters.GetEnumerator() | Select Key
 $rawParams.GetEnumerator() | Foreach-Object { if ($scriptParameters.Key -contains $_.Name) { $params.Add($_.Name, $_.Value) } }
 
-Install-Module Az -Force -confirm:$false -AllowClobber
+Install-Module Az -Force -confirm:$false -AllowClobber -Scope CurrentUser
 
 $cred = New-Object System.Management.Automation.PSCredential($rawParams['serviceprincipalid'], $rawParams['serviceprincipalpassword'])
 
