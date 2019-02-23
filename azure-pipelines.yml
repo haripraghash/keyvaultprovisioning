@@ -13,7 +13,7 @@ steps:
 - task: CopyFiles@2
   displayName: Copy provisioning scripts
   inputs:
-    SourceFolder: keyvaultprovisioning
+    SourceFolder: keyvaultprovisioning/keyvaultprovisioning
     TargetFolder: '$(build.artifactstagingdirectory)/iac'
 
 - task: PublishBuildArtifacts@1
