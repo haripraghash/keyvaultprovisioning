@@ -44,7 +44,7 @@ Install-Module Az -Force -confirm:$false -AllowClobber
 
 $cred = New-Object System.Management.Automation.PSCredential($rawParams['serviceprincipalid'], $rawParams['serviceprincipalpassword'])
 
-Login-AzureRMAccount -Credential $cred -ServicePrincipal -SubscriptionId $rawParams['subscriptionid'] -TenantId $rawParams['tenantid']
+Login-AzAccount -Credential $cred -ServicePrincipal -SubscriptionId $rawParams['subscriptionid'] -TenantId $rawParams['tenantid']
 
 
 Write-Host ($params | Out-String)
