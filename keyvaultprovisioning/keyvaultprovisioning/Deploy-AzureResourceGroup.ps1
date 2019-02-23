@@ -106,6 +106,7 @@ if ($ValidateOnly) {
     }
 }
 else {
+    Write-Host @TemplateParameters
     New-AzureRmResourceGroupDeployment -Name ((Get-ChildItem $TemplateFile).BaseName + '-' + ((Get-Date).ToUniversalTime()).ToString('MMdd-HHmm')) `
                                        -ResourceGroupName $ResourceGroupName `
                                        -TemplateFile $TemplateFile `
