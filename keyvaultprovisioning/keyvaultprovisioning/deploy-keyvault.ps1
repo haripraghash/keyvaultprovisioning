@@ -19,7 +19,7 @@ $ErrorActionPreference = 'Stop'
 
 Set-Location $PSScriptRoot
 
-$AadTenantId = (Get-AzureRmContext).Tenant.Id
+$AadTenantId = (Get-AzContext).Tenant.Id
 $ArtifactsStorageAccountName = $ResourceNamePrefix + $Environment + 'artifacts'
 $ArtifactsStorageContainerName = 'artifacts'
 $ArtifactsStagingDirectory = '.'
