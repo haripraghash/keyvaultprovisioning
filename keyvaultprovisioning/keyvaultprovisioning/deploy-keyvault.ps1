@@ -27,9 +27,6 @@ $ArtifactsStagingDirectory = '.'
 function CreateResourceGroup() {
 	$parameters = New-Object -TypeName Hashtable
 
-	# general
-	$parameters['environment'] = $Environment
-
 	# product sql db	
 	$parameters['keyVaultName'] = $KeyVaultName
 	$parameters['objectId'] = $KeyVaultServicePrincipalObjectId
