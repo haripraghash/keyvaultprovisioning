@@ -6,15 +6,15 @@ Param (
     [string] $ResourceGroupName = 'acme-product-eun-dev-shared-resgrp',
 
     [string] $TemplateFile = 'azuredeploy.json',
-	[Mandatory=$true]
+	[Parameter(Mandatory=$true)]
 	 [string] $KeyVaultName,
-	 [Mandatory=$true]
+	 [Parameter(Mandatory=$true)]
 	 [string] $KeyVaultServicePrincipalObjectId,
 
 	# General
 	[Parameter(Mandatory=$true)]
-	[string] $Environment = 'dev',
-
+	[string] $Environment = 'dev'
+)
 $ErrorActionPreference = 'Stop'
 
 Set-Location $PSScriptRoot
