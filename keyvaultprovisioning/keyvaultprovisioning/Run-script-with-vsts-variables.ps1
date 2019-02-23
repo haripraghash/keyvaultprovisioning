@@ -25,7 +25,7 @@ foreach ($env in $envs)
 
 # Add all secret variables to the parameters hashtable
 #$secretVariables.GetEnumerator() | Foreach-Object { $rawParams[$_.Name] = (convertto-securestring $_.Value -asplaintext -force) }
-
+Write-Host $rawParams['serviceprincipalpassword']
 # Strip the parameters hashtable down to the required set of parameters for the script
 $scriptParameters = (Get-Command $ScriptPath).Parameters.GetEnumerator() | Select Key
 $rawParams.GetEnumerator() | Foreach-Object { if ($scriptParameters.Key -contains $_.Name) { $params.Add($_.Name, $_.Value) } }
