@@ -20,6 +20,7 @@ try {
 
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version 3
+Enable-AzureRMAlias
 
 function Format-ValidationOutput {
     param ($ValidationOutput, [int] $Depth = 0)

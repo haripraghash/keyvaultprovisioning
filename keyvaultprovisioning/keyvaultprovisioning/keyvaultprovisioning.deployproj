@@ -25,11 +25,14 @@
   <ItemGroup>
     <Content Include="azuredeploy.parameters.json" />
     <Content Include="azuredeploy.json" />
+    <None Include="deploy-keyvault.ps1" />
     <None Include="Deployment.targets">
       <Visible>False</Visible>
     </None>
     <Content Include="Deploy-AzureResourceGroup.ps1" />
     <Content Include="README.md" />
+    <None Include="localdeploy.ps1" />
+    <None Include="Run-script-with-vsts-variables.ps1" />
   </ItemGroup>
   <Target Name="GetReferenceAssemblyPaths" />
 </Project>
