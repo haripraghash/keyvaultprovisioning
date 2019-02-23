@@ -35,7 +35,7 @@ $rawParams.GetEnumerator() | Foreach-Object { if ($scriptParameters.Key -contain
 
 $cred = New-Object System.Management.Automation.PSCredential($rawParams['serviceprincipalid'], $rawParams['serviceprincipalpassword'])
 
-Login-AzureRMAccount -Credential $cred -ServicePrincipal -Subscription $rawParams['subscriptionid'] -Tenant $rawParams['tenantid']
+Login-AzureRMAccount -Credential $cred -ServicePrincipal -SubscriptionId $rawParams['subscriptionid'] -Tenant $rawParams['tenantid']
 
 
 Write-Host ($params | Out-String)
