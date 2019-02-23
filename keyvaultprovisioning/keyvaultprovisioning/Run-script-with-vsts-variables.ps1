@@ -1,5 +1,6 @@
 param(
-	[string]$ScriptPath
+	[string]$ScriptPath,
+	[hashtable]$secretVariables 	
 )
 
 Set-Location $PSScriptRoot
@@ -24,7 +25,8 @@ foreach ($env in $envs)
 }
 
 # Add all secret variables to the parameters hashtable
-#$secretVariables.GetEnumerator() | Foreach-Object { $rawParams[$_.Name] = (convertto-securestring $_.Value -asplaintext -force) }
+$secretVariables.GetEnumerator() | Foreach-Object { $rawParams[$_.Name] = (convertto-securestring $_.Value -asplaintext -force) }
+
 Write-Host $rawParams['serviceprincipalpassword']
 # Strip the parameters hashtable down to the required set of parameters for the script
 $scriptParameters = (Get-Command $ScriptPath).Parameters.GetEnumerator() | Select Key
